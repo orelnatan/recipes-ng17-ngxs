@@ -1,0 +1,26 @@
+
+<page-layout>
+  <div class="all-recipes-page-main">
+    @if (loading$ | async) { 
+      Loading...
+    } @else {
+      @if (recipes$ | async; as recipes) {
+        @if (recipes.length) {
+          <elements-grid [elementMinSizePx]="226">
+            @for(recipe of recipes; track recipe.id) {
+              <recipe-card [recipe]="recipe"></recipe-card>
+            }
+          </elements-grid>
+        } @else {
+          No Recipes Found
+        }
+      }
+    }
+
+    @if (error$ | async) { 
+      Oppsss, we ran into an error :(
+    }
+  </div>
+  
+  <router-outlet></router-outlet>
+</page-layout>

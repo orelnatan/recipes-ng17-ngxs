@@ -1,0 +1,35 @@
+@import './src/assets/config/utils.scss';
+
+.recipes-navbar-main {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 66px 66px 0px 66px;
+
+  .active-link {
+    border-bottom: 3px solid;
+    transition: 200ms;
+  }
+
+  .disabled-button {
+    pointer-events: none;
+  }
+
+  .navbar-routes {
+    display: inline-flex;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  nav {
+    padding: 0px 35px;
+    width: 355px;
+  }
+
+  ::ng-deep button {
+    font-weight: bold;
+    border-radius: 15px;
+  }
+}

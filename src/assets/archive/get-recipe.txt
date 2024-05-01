@@ -1,0 +1,22 @@
+
+@Action(GetRecipe)
+getRecipe(ctx: StateContext<RecipesStateModel>, action: GetRecipe) {
+  ctx.patchState({ loading: true });
+
+  return this.recipesService.getRecipeById(action.payload.id).pipe(
+    tap((recipe: IRecipe) => {     
+      ctx.patchState({ recipe: recipe, loading: false });
+    }),
+    catchError(error => of(
+      ctx.dispatch(new Failure({ error }))
+    )),
+  )
+}
+
+ getRecipeById(id: string): Observable<IRecipe> {
+  return this.fetchRecipes().pipe(
+    map((recipes: IRecipe[]) => {
+      return recipes.find(recipe => recipe.id === id)!
+    })
+  )
+}

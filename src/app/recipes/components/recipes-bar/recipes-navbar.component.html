@@ -1,0 +1,33 @@
+
+<div class="recipes-navbar-main">
+  <div class="navbar-routes">
+    <h1>Recipes</h1>
+
+    <nav mat-tab-nav-bar [tabPanel]="panel">
+      <a mat-tab-link
+        [routerLink]="['all-recipes']"
+        [relativeTo]="activatedRoute"
+        [routerLinkActive]="'active-link'">
+        <b>All</b> 
+      </a>
+
+      <a mat-tab-link
+       [routerLink]="['fav-recipes']"
+       [relativeTo]="activatedRoute"
+       [routerLinkActive]="'active-link'">
+        <b>Favorits</b> 
+      </a>
+    </nav>
+  </div>
+  
+  <primary-button
+    [routerLink]="[router.url, 'recipe', 'create']"
+    [placeholder]="'New Recipe'"
+    [icon]="'add'"
+    [palette]="'primary'">
+  </primary-button>
+</div>
+
+<mat-tab-nav-panel #panel></mat-tab-nav-panel>
+
+

@@ -1,0 +1,23 @@
+
+<div class="recipe-card-main shallow-shadow" 
+  [routerLink]="['./', 'recipe', 'view', recipe.id]"
+>
+  <mat-card>
+    @if(recipe.favorite) {
+      <mat-icon class="favorite-icon">{{ 'stars' }}</mat-icon>
+    }
+    
+    <img [ngSrc]="recipe.image" fill priority>
+    <mat-card-content>
+      <h3>{{ recipe.name }}</h3>
+    </mat-card-content>
+    <mat-card-actions>
+      <mat-chip>{{ recipe.style }}</mat-chip>
+
+      <div class="recipe-duration">
+        <mat-icon class="clock-icon">{{ 'watch_later' }}</mat-icon>
+        <span class="recipe-time-label">{{ recipe.time }}</span>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

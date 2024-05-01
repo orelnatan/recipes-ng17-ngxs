@@ -1,0 +1,55 @@
+@import './src/assets/config/utils.scss';
+
+$clock-icon-size: 20px;
+
+.recipe-header-main {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .header-options {
+    display: inline-flex;
+    margin: 0px -5px;
+  }
+
+  .style-and-timing {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    margin: 0px -10px;
+    color: $color-silver;
+  }
+
+  .created-by {
+    font-size: 13px;
+    font-style: italic;
+  }
+
+  .created-at {
+    padding: 0px 10px;
+    font-size: 13px;
+    font-style: italic;
+  }
+
+  .clock-icon {
+    font-size: $clock-icon-size;
+    height: $clock-icon-size;
+    width: $clock-icon-size + 2;
+  }
+
+  .header-description {
+    width: 65%;
+  }
+
+  .recipe-time-label {
+    font-size: 13px;
+  }
+
+  primary-button {
+    padding: 10px 5px;
+  }
+
+  mat-chip {
+    margin: 0px 10px;
+  }
+}

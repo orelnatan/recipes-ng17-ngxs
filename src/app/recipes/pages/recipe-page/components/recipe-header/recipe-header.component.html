@@ -1,0 +1,40 @@
+
+<div class="recipe-header-main">
+  <div class="header-description">
+    <h1>{{ name }}</h1>
+
+    <span class="created-by">by: {{ autor }}</span>
+    <span class="created-at">created at: {{ createdAt }}</span>
+
+    <div class="style-and-timing">
+      <mat-chip>{{ style }}</mat-chip>
+
+      <mat-icon class="clock-icon">{{ 'watch_later' }}</mat-icon>
+      <span class="recipe-time-label">{{ time }}</span>
+    </div>
+  </div>
+
+  <div class="header-options">
+    @if(favorite) {
+      <primary-button
+        [placeholder]="'Unlike'"
+        [icon]="'favorite'"
+        [palette]="'primary'"
+        (click)="like.emit()">
+      </primary-button>
+    } @else {
+      <primary-button
+        [placeholder]="'Like'"
+        [icon]="'favorite'"
+        [palette]="'primary'"
+        (click)="like.emit()">
+      </primary-button>
+    }
+  
+    <primary-button
+      [placeholder]="'Update'"
+      [palette]="'primary'"
+      (click)="update.emit()">
+    </primary-button>
+  </div>
+</div>

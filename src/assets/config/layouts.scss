@@ -1,0 +1,38 @@
+@import './definitions';
+
+%root-layout-main {
+  display: flex;
+  flex-direction: column;
+  height: $full-screen-height;
+  width: $full-screen-width;
+}
+
+%root-layout-body {
+  display: inline-flex;
+  width: $full-screen-width;
+  height: $full-screen-height;
+  overflow: hidden;
+}
+
+%root-layout-inner-content {
+  width: $full-screen-width;
+  overflow: auto;
+}
+
+%page-layout {
+  display: table; 
+  width: $full-screen-width;
+  height: $full-screen-height;
+}
+
+%page-intermediate {
+  display: table-cell;
+  padding: 66px;
+  width: $full-screen-width;
+}
+
+%page-content {
+  width: $full-screen-width;
+  height: $full-screen-height;
+}
+

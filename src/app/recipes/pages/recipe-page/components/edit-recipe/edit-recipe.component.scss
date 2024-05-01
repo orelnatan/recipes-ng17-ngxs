@@ -1,0 +1,23 @@
+@import './src/assets/config/utils.scss';
+
+.edit-recipe-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 32px;
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  primary-button {
+    width: 165px;
+  }
+
+  mat-icon {
+    cursor: pointer;
+  }
+}

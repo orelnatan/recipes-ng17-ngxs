@@ -1,0 +1,14 @@
+
+<div class="root-layout-main" [style.position]="forRoot ? 'absolute' : 'static'">
+  <div class="layout-body">
+    <div class="inner-content-container">
+      <header>
+        <ng-content select="content-header"></ng-content>
+      </header>
+
+      <section [style.height.%]="fitContent ? 0 : null">
+        <ng-content></ng-content>
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+
+<div class="input-select-main">
+  <mat-form-field>
+    <mat-label>{{ placeholder }}</mat-label>
+    <mat-select
+      [value]="value"
+      [formControl]="control | abstractToFormControl"
+      [errorStateMatcher]="matcher"
+      (selectionChange)="onchange.emit($event.value)"
+    >
+      @for (item of items; track item.id) {
+        <mat-option [value]="item.value">{{ item.value }}</mat-option>
+      }
+    </mat-select>
+
+    <mat-error>{{ validation }}</mat-error>
+  </mat-form-field>
+</div>

@@ -1,0 +1,17 @@
+@import './src/assets/config/utils.scss';
+
+.context-frame-main {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  section {
+    padding-top: 15px;
+  }
+
+  mat-error {
+    font-size: 12.75px;
+  }
+}

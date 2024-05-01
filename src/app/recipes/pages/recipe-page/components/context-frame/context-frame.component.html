@@ -1,0 +1,18 @@
+
+<div class="context-frame-main" [style.padding-top.px]="gap">
+  <header>
+    <span><b>{{ title }}</b></span>
+
+    <primary-button *ngIf="!hideAddOption"
+      [icon]="'add'"
+      [placeholder]="'Add'"
+      (onclick)="add.emit()">
+    </primary-button>
+  </header>
+
+  <section>
+    <ng-content></ng-content>
+
+    <mat-error *ngIf="error">At least one item is required!</mat-error>
+  </section>
+</div>

@@ -1,0 +1,66 @@
+@import './src/assets/config/utils.scss';
+
+$clock-icon-size: 20px;
+$favorite-icon-size: 30px;
+
+.recipe-card-main {
+  position: relative;
+  transition: 300ms;
+  border-radius: 35px;
+  cursor: pointer;
+
+  .recipe-duration {
+    display: inline-flex;
+    align-items: center;
+    padding: 0px 3px;
+    color: $color-silver;
+  }
+
+  .favorite-icon {
+    position: absolute;
+    z-index: 9;
+    right: 0;
+    margin: 8px;
+    font-size: $favorite-icon-size;
+    height: $favorite-icon-size;
+    width: $favorite-icon-size;
+    color: $color-base;
+  }
+
+  .clock-icon {
+    font-size: $clock-icon-size;
+    height: $clock-icon-size;
+    width: $clock-icon-size + 2;
+  }
+
+  .recipe-time-label {
+    font-size: 13px;
+  }
+
+  img {
+    height: 180px !important;
+    transition: 300ms;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  mat-card {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  mat-card-content {
+    height: 115px;
+    padding-top: 16px;
+  }
+
+  mat-card-actions {
+    justify-content: space-between;
+  }
+
+  &:hover {
+    margin-top: -7px;
+
+    img { opacity: 0.88; }
+  }
+}
