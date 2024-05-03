@@ -4,16 +4,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
 import { RecipesState } from '@recipes/recipes/state';
 import { Create, Update } from '@recipes/recipes/state/recipes.actions';
-import { FormUtilsModule } from '@recipes/shared/form-utils';
 import { IRecipe, Prop, Style } from '@recipes/recipes/models';
-import { IListItem } from '@recipes/shared/form-utils/models';
-import { AccessoriesModule } from '@recipes/shared/accessories';
+import { FormUtilsModule, IListItem } from '@recipes/shared/form-utils';
+import { EditHeaderModule } from '@recipes/shared/components';
+import { UtilsModule } from '@recipes/shared/utils';
 
 import { ContextFrameModule } from '../context-frame';
 import { ValidatorsModule } from '../../validators';
@@ -26,11 +27,13 @@ import { ValidatorsModule } from '../../validators';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
+    MatInputModule,
     MatProgressSpinnerModule,
     FormUtilsModule,
     ContextFrameModule,
+    EditHeaderModule,
     ValidatorsModule,
-    AccessoriesModule
+    UtilsModule,
   ],
   templateUrl: './edit-recipe.component.html',
   styleUrl: './edit-recipe.component.scss'
@@ -89,7 +92,7 @@ export class EditRecipeComponent {
     recipe[prop].splice(index, 1);
   }
 
-  trackByFn(index: number) {
+  trackByFn(index: number): number {
     return index;  
   }
 }

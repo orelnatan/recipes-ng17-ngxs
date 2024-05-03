@@ -4,9 +4,8 @@
     <input matInput 
       type="text"
       placeholder="{{placeholder}}"
-      value="{{value}}"
       [errorStateMatcher]="matcher"
-      [formControl]="control | abstractToFormControl"
+      [formControl]="control"
       [readonly]="readonly"
       (input)="onchange.emit($event.target.value)">
       

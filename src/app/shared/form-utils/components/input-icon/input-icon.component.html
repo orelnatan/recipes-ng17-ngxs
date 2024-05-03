@@ -1,0 +1,16 @@
+
+<div class="input-icon-main">
+  <div class="inputs-container">
+    <inputs-container>
+      <input-field>
+        <ng-content></ng-content>
+      </input-field>
+    </inputs-container>
+  </div>
+  
+  <div class="mat-icon-container">
+    <mat-icon (click)="onclick.emit()">
+      {{ icon }}
+    </mat-icon>
+  </div>
+</div>

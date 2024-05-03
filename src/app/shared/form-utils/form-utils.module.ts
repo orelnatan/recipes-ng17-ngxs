@@ -16,12 +16,8 @@ import {
   PrimaryButtonComponent,
   InputNumberComponent,
   InputSelectComponent,
-  InputCommentsComponent,
+  InputIconComponent,
 } from './components';
-
-import { 
-  AbstractToFormControlPipe
-} from './pipes';
 
 @NgModule({
   declarations: [
@@ -29,11 +25,10 @@ import {
     InputNumberComponent,
     InputTextareaComponent,
     InputSelectComponent,
-    InputCommentsComponent,
     InputsContainerComponent,
     InputFieldComponent,
+    InputIconComponent,
     PrimaryButtonComponent,
-    AbstractToFormControlPipe
   ],
   imports: [ 
     CommonModule,
@@ -51,11 +46,10 @@ import {
     InputNumberComponent,
     InputTextareaComponent,
     InputSelectComponent,
-    InputCommentsComponent,
     InputsContainerComponent,
     InputFieldComponent,
+    InputIconComponent,
     PrimaryButtonComponent,
-    AbstractToFormControlPipe
   ]
 })
 export class FormUtilsModule {}

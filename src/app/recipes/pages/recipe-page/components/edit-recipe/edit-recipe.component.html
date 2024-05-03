@@ -14,7 +14,7 @@
       } @else { 
         <h1>New Recipe</h1>
       }
-      
+
       <inputs-container [gap]="45">
         <input-field>
           <input-text
@@ -22,8 +22,7 @@
             [placeholder]="'Name'"
             [validation]="'Required field'"
             [required]="true"
-            [ngModel]="recipe.name"
-            (onchange)="recipe.name=$event"
+            [(ngModel)]="recipe.name"
             #name="ngModel"
             id="name"
             name="name"
@@ -57,8 +56,7 @@
             [placeholder]="'Author'"
             [validation]="'Required field'"
             [required]="true"
-            [ngModel]="recipe.author"
-            (onchange)="recipe.author=$event"
+            [(ngModel)]="recipe.author"
             #author="ngModel"
             id="author"
             name="author"
@@ -73,8 +71,7 @@
             [validation]="'Required field'"
             [placeholder]="'Time(minutes)'"
             [required]="true"
-            [ngModel]="recipe.time"
-            (onchange)="recipe.time=$event"
+            [(ngModel)]="recipe.time"
             #time="ngModel"
             id="time"
             name="time"
@@ -92,8 +89,7 @@
             [placeholder]="'Image'"
             [validation]="'Required field'"
             [required]="true"
-            [ngModel]="recipe.image"
-            (onchange)="recipe.image=$event"
+            [(ngModel)]="recipe.image"
             #image="ngModel"
             id="image"
             name="image"
@@ -110,8 +106,7 @@
             [validation]="'Required field'"
             [required]="true"
             [rows]="5"
-            [ngModel]="recipe.notes"
-            (onchange)="recipe.notes=$event"
+            [(ngModel)]="recipe.notes"
             #notes="ngModel"
             id="notes"
             name="notes"
@@ -121,68 +116,52 @@
         </input-field>
       </inputs-container>
 
-      <context-frame 
-        [gap]="20"
-        [title]="'Ingredients'" 
-        [error]="ngform.errors?.['atLeastOneIngredient'] && ngform.submitted"
-        (add)="add(recipe, 'ingredients')"
-      >
-        <ng-container *ngFor="let ingredient of recipe.ingredients; let i=index; trackBy: trackByFn">
-          <inputs-container [gap]="10">
-            <input-field>
-              <input-text
-                [control]="ngform.controls['ingredient_' + i]"
-                [placeholder]="'Ingredient ' + (i + 1)"
-                [validation]="'Required field'"
-                [required]="true"
-                [id]="'ingredient_' + i"
-                [name]="'ingredient_' + i"
-                [ngModel]="ingredient"
-                (onchange)="recipe.ingredients[i]=$event"
-                ngDefaultControl>
-              </input-text>
-            </input-field>
-  
-            <input-field [gap]="15" [style.width.px]="30">
-              <mat-icon (click)="remove(recipe, i, 'ingredients')" >
-                {{ 'delete' }}
-              </mat-icon>
-            </input-field>
-          </inputs-container>
-        </ng-container>
-      </context-frame>
+      <div class="header-container">
+        <edit-header [title]="'Ingredients'" (add)="add(recipe, 'ingredients')"></edit-header>
+      </div>
+     
+      <div class="input-icon-container" *ngFor="let ingredient of recipe.ingredients; let i=index; trackBy: trackByFn">
+        <input-icon [icon]="'delete'" (onclick)="remove(recipe, i, 'ingredients')">
+          <input-text
+            [control]="ngform.controls['ingredient_' + i] | abstractToFormControl"
+            [value]="ingredient"
+            [placeholder]="'Ingredient ' + (i + 1)"
+            [required]="true"
+            [id]="'ingredient_' + i"
+            [name]="'ingredient_' + i"
+            [(ngModel)]="recipe.ingredients[i]"
+            ngDefaultControl>
+          </input-text>
+        </input-icon>
+      </div>
 
-      <context-frame 
-        [gap]="20"
-        [title]="'Instructions'" 
-        [error]="ngform.errors?.['atLeastOneInstruction'] && ngform.submitted"
-        (add)="add(recipe, 'instructions')"
-      >
-        <ng-container *ngFor="let instruction of recipe.instructions; let i=index; trackBy: trackByFn">
-          <inputs-container [gap]="10">
-            <input-field>
-              <input-text
-                [control]="ngform.controls['instruction_' + i]"
-                [placeholder]="'Instruction ' + (i + 1)"
-                [validation]="'Required field'"
-                [required]="true"
-                [id]="'instruction_' + i"
-                [name]="'instruction_' + i"
-                [ngModel]="instruction"
-                (onchange)="recipe.instructions[i]=$event"
-                ngDefaultControl>
-              </input-text>
-            </input-field>
-  
-            <input-field [gap]="15" [style.width.px]="30">
-              <mat-icon (click)="remove(recipe, i, 'instructions')">
-                {{ 'delete' }}
-              </mat-icon>
-            </input-field>
-          </inputs-container>
-        </ng-container>
-      </context-frame>
+      <mat-error *ngIf="ngform.errors?.['atLeastOneIngredient'] && ngform.submitted">
+        At least one item is required!
+      </mat-error>
+      
+      <div class="header-container">
+        <edit-header [title]="'Instructions'" (add)="add(recipe, 'instructions')"></edit-header>
+      </div>
 
+      <div class="input-icon-container" *ngFor="let instruction of recipe.instructions; let i=index; trackBy: trackByFn">
+        <input-icon [icon]="'delete'" (onclick)="remove(recipe, i, 'instructions')">
+          <input-text
+            [control]="ngform.controls['instruction_' + i] | abstractToFormControl"
+            [value]="instruction"
+            [placeholder]="'Instruction ' + (i + 1)"
+            [required]="true"
+            [id]="'instruction_' + i"
+            [name]="'instruction_' + i"
+            [(ngModel)]="recipe.instructions[i]"
+            ngDefaultControl>
+          </input-text>
+        </input-icon>
+      </div>
+      
+      <mat-error *ngIf="ngform.errors?.['atLeastOneInstruction'] && ngform.submitted">
+        At least one item is required!
+      </mat-error>
+      
       <button #submiter type="submit" hidden></button>
     </form>
 

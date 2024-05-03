@@ -1,0 +1,12 @@
+
+<div class="edit-header-main">
+  <header>
+    <span><b>{{ title }}</b></span>
+
+    <primary-button *ngIf="!hideAddOption"
+      [icon]="'add'"
+      [placeholder]="'Add'"
+      (onclick)="add.emit()">
+    </primary-button>
+  </header>
+</div>

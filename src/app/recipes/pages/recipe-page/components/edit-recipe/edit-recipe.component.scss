@@ -8,16 +8,21 @@
   height: 100%;
   padding: 32px;
 
+  .header-container {
+    padding-top: 20px;
+  }
+
+  .input-icon-container {
+    padding-top: 20px;
+  }
+
   footer {
     display: flex;
     justify-content: space-between;
+    padding-top: 15px;
   }
 
   primary-button {
     width: 165px;
-  }
-
-  mat-icon {
-    cursor: pointer;
   }
 }

@@ -10,7 +10,6 @@ import { SidenavModule } from '@recipes/shared/components';
 import { RecipesNavbarModule } from './components';
 import { RecipesState } from './state';
 
-
 @Component({
   selector: 'recipes-root',
   standalone: true,

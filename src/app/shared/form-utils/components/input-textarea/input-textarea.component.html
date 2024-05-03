@@ -10,7 +10,7 @@
       attr.maxlength="{{maxlength}}"
       placeholder="{{placeholder}}"
       [errorStateMatcher]="matcher"
-      [formControl]="control | abstractToFormControl"
+      [formControl]="control"
       [readonly]="readonly"
       (input)="onchange.emit($event.target.value)">
     </textarea>

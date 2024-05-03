@@ -3,8 +3,7 @@
   <mat-form-field>
     <mat-label>{{ placeholder }}</mat-label>
     <mat-select
-      [value]="value"
-      [formControl]="control | abstractToFormControl"
+      [formControl]="control"
       [errorStateMatcher]="matcher"
       (selectionChange)="onchange.emit($event.value)"
     >

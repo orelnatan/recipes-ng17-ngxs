@@ -1,0 +1,27 @@
+@import './src/assets/config/utils.scss';
+
+.input-icon-main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  border-radius: 25px;
+  background: $color-mouse;
+
+  .mat-icon-container {
+    margin: 0px 10px;
+    padding-top: 10px;
+  }
+
+  .inputs-container {
+    width: 100%;
+  }
+
+  input-field {
+    height: 57px;
+  }
+
+  mat-icon {
+    cursor: pointer;
+  }
+}

@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { AbstractControl } from '@angular/forms';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 
 import { BaseErrorStateMatcher } from '../../classes';
@@ -8,9 +8,9 @@ import { BaseErrorStateMatcher } from '../../classes';
   selector: 'input-textarea',
   templateUrl: './input-textarea.component.html',
 })
-export class InputTextareaComponent {
+export class InputTextareaComponent implements OnChanges {
+  @Input() control: FormControl = new FormControl();
   @Input() value: string;
-  @Input() control: AbstractControl;
   @Input() validation: string;
   @Input() placeholder: string;
   @Input() rows: number;
@@ -21,4 +21,8 @@ export class InputTextareaComponent {
   @Output() onchange: EventEmitter<string> = new EventEmitter();
 
   matcher: ErrorStateMatcher = new BaseErrorStateMatcher();
+
+  ngOnChanges(): void {
+    this.control.setValue(this.value);
+  }
 }

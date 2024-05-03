@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { AbstractControl, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 import { BaseErrorStateMatcher } from '../../classes';
 import { IListItem } from '../../models';
@@ -9,8 +9,8 @@ import { IListItem } from '../../models';
   selector: 'input-select',
   templateUrl: './input-select.component.html',
 })
-export class InputSelectComponent<T> {
-  @Input() control: AbstractControl;
+export class InputSelectComponent<T> implements OnChanges {
+  @Input() control: FormControl = new FormControl();
   @Input() value: T;
   @Input() items: IListItem[] = [];
   @Input() validation: string;
@@ -20,4 +20,8 @@ export class InputSelectComponent<T> {
   matcher: ErrorStateMatcher = new BaseErrorStateMatcher();
   
   @Output() onchange: EventEmitter<T> = new EventEmitter();
+
+  ngOnChanges(): void {
+    this.control.setValue(this.value);
+  }
 }
