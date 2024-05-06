@@ -6,10 +6,10 @@ import { BaseErrorStateMatcher } from '../../classes';
 import { IListItem } from '../../models';
 
 @Component({
-  selector: 'input-select',
-  templateUrl: './input-select.component.html',
+  selector: '[input] input-single-select',
+  templateUrl: './input-single-select.component.html',
 })
-export class InputSelectComponent<T> implements OnChanges {
+export class InputSingleSelectComponent<T> implements OnChanges {
   @Input() control: FormControl = new FormControl();
   @Input() value: T;
   @Input() items: IListItem[] = [];

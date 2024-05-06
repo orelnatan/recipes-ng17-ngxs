@@ -15,7 +15,7 @@ import {
   InputFieldComponent,
   PrimaryButtonComponent,
   InputNumberComponent,
-  InputSelectComponent,
+  InputSingleSelectComponent,
   InputIconComponent,
 } from './components';
 
@@ -24,7 +24,7 @@ import {
     InputTextComponent,
     InputNumberComponent,
     InputTextareaComponent,
-    InputSelectComponent,
+    InputSingleSelectComponent,
     InputsContainerComponent,
     InputFieldComponent,
     InputIconComponent,
@@ -45,7 +45,7 @@ import {
     InputTextComponent,
     InputNumberComponent,
     InputTextareaComponent,
-    InputSelectComponent,
+    InputSingleSelectComponent,
     InputsContainerComponent,
     InputFieldComponent,
     InputIconComponent,

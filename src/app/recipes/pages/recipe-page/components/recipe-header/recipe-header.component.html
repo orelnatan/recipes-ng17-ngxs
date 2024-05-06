@@ -16,14 +16,14 @@
 
   <div class="header-options">
     @if(favorite) {
-      <primary-button
+      <primary-button input
         [placeholder]="'Unlike'"
         [icon]="'favorite'"
         [palette]="'primary'"
         (click)="like.emit()">
       </primary-button>
     } @else {
-      <primary-button
+      <primary-button input
         [placeholder]="'Like'"
         [icon]="'favorite'"
         [palette]="'primary'"
@@ -31,7 +31,7 @@
       </primary-button>
     }
   
-    <primary-button
+    <primary-button input
       [placeholder]="'Update'"
       [palette]="'primary'"
       (click)="update.emit()">

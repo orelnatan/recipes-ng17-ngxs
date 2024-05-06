@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, booleanAttribute } from '@angular/core';
 
 @Component({
   selector: 'inputs-container',
@@ -8,4 +8,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class InputsContainerComponent {
   @Input() gap: number;
+
+  @Input({ transform: booleanAttribute }) between: boolean;
+  @Input({ transform: booleanAttribute }) around: boolean;
+  @Input({ transform: booleanAttribute }) evenly: boolean;
 }

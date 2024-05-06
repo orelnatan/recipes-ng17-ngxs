@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { AbstractControl, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 import { BaseErrorStateMatcher } from '../../classes';
 
 @Component({
-  selector: 'input-text',
+  selector: '[input] input-text',
   templateUrl: './input-text.component.html',
 })
 export class InputTextComponent implements OnChanges {

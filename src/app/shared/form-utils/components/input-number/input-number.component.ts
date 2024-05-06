@@ -5,7 +5,7 @@ import { FormControl } from '@angular/forms';
 import { BaseErrorStateMatcher } from '../../classes';
 
 @Component({
-  selector: 'input-number',
+  selector: '[input] input-number',
   templateUrl: './input-number.component.html',
 })
 export class InputNumberComponent implements OnChanges {

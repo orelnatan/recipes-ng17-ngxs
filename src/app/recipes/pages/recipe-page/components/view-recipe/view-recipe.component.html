@@ -24,38 +24,9 @@
         </input-field>
       </inputs-container>
 
-      <context-frame 
-        [gap]="35"
-        [title]="'Ingredients'" 
-        [hideAddOption]="true"
-      >
-        <div class="ingredients-container">
-          <ng-container *ngFor="let ingredient of recipe.ingredients">
-            <inputs-container>
-              <input-field>
-                <p>{{ ingredient }}</p>
-              </input-field>
-            </inputs-container>
-          </ng-container>
-        </div>
-      </context-frame>
+     
 
-      <context-frame 
-        [gap]="35"
-        [title]="'Instructions'" 
-        [hideAddOption]="true"
-      >
-        <div class="instructions-container">
-          <ng-container *ngFor="let instruction of recipe.instructions; let i=index">
-            <inputs-container [gap]="15">
-              <input-field>
-                <b>Step {{ i + 1 }}:</b>
-                <p>{{ instruction }}</p>
-              </input-field>
-            </inputs-container>
-          </ng-container>
-        </div>
-      </context-frame>
+     
     </div>
   } 
 

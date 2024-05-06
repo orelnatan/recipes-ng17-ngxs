@@ -3,7 +3,7 @@
   <header>
     <span><b>{{ title }}</b></span>
 
-    <primary-button *ngIf="!hideAddOption"
+    <primary-button input *ngIf="!hideAddOption"
       [icon]="'add'"
       [placeholder]="'Add'"
       (onclick)="add.emit()">

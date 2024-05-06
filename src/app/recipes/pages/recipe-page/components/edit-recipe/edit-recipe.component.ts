@@ -16,7 +16,6 @@ import { FormUtilsModule, IListItem } from '@recipes/shared/form-utils';
 import { EditHeaderModule } from '@recipes/shared/components';
 import { UtilsModule } from '@recipes/shared/utils';
 
-import { ContextFrameModule } from '../context-frame';
 import { ValidatorsModule } from '../../validators';
 
 @Component({
@@ -30,7 +29,6 @@ import { ValidatorsModule } from '../../validators';
     MatInputModule,
     MatProgressSpinnerModule,
     FormUtilsModule,
-    ContextFrameModule,
     EditHeaderModule,
     ValidatorsModule,
     UtilsModule,

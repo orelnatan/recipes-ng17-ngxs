@@ -17,7 +17,7 @@
 
       <inputs-container [gap]="45">
         <input-field>
-          <input-text
+          <input-text input
             [control]="name.control"
             [placeholder]="'Name'"
             [validation]="'Required field'"
@@ -31,8 +31,8 @@
           </input-text>
         </input-field>
 
-        <input-field [style.width.px]="245">
-          <input-select
+        <input-field [width]="25">
+          <input-single-select input
             [items]="styles"
             [control]="style.control"
             [value]="recipe.style"
@@ -45,13 +45,13 @@
             id="style"
             name="style"
             ngDefaultControl>
-          </input-select>
+          </input-single-select>
         </input-field>
       </inputs-container>
 
       <inputs-container [gap]="10">
         <input-field>
-          <input-text
+          <input-text input
             [control]="author.control"
             [placeholder]="'Author'"
             [validation]="'Required field'"
@@ -65,8 +65,8 @@
           </input-text>
         </input-field>
 
-        <input-field [style.width.px]="245">
-          <input-number
+        <input-field [width]="25">
+          <input-number input
             [control]="time.control"
             [validation]="'Required field'"
             [placeholder]="'Time(minutes)'"
@@ -84,7 +84,7 @@
 
       <inputs-container [gap]="10">
         <input-field>
-          <input-text
+          <input-text input
             [control]="image.control"
             [placeholder]="'Image'"
             [validation]="'Required field'"
@@ -100,7 +100,7 @@
 
       <inputs-container [gap]="10">
         <input-field>
-          <input-textarea
+          <input-textarea input
             [control]="notes.control"
             [placeholder]="'Your notes here...'"
             [validation]="'Required field'"
@@ -120,20 +120,26 @@
         <edit-header [title]="'Ingredients'" (add)="add(recipe, 'ingredients')"></edit-header>
       </div>
      
-      <div class="input-icon-container" *ngFor="let ingredient of recipe.ingredients; let i=index; trackBy: trackByFn">
-        <input-icon [icon]="'delete'" (onclick)="remove(recipe, i, 'ingredients')">
-          <input-text
-            [control]="ngform.controls['ingredient_' + i] | abstractToFormControl"
-            [value]="ingredient"
-            [placeholder]="'Ingredient ' + (i + 1)"
-            [required]="true"
-            [id]="'ingredient_' + i"
-            [name]="'ingredient_' + i"
-            [(ngModel)]="recipe.ingredients[i]"
-            ngDefaultControl>
-          </input-text>
-        </input-icon>
-      </div>
+      <inputs-container *ngFor="let ingredient of recipe.ingredients; let i=index; trackBy: trackByFn" [gap]="20">
+        <input-field>
+          <input-icon input
+             [icon]="'delete'"
+             (iconClick)="remove(recipe, i, 'ingredients')"
+          >
+            <input-text input
+              [control]="ngform.controls['ingredient_' + i] | abstractToFormControl"
+              [value]="ingredient"
+              [validation]="'Required field'"
+              [placeholder]="'Ingredient ' + (i + 1)"
+              [required]="true"
+              [id]="'ingredient_' + i"
+              [name]="'ingredient_' + i"
+              [(ngModel)]="recipe.ingredients[i]"
+              ngDefaultControl>
+            </input-text>
+          </input-icon>
+        </input-field>
+      </inputs-container>
 
       <mat-error *ngIf="ngform.errors?.['atLeastOneIngredient'] && ngform.submitted">
         At least one item is required!
@@ -143,40 +149,50 @@
         <edit-header [title]="'Instructions'" (add)="add(recipe, 'instructions')"></edit-header>
       </div>
 
-      <div class="input-icon-container" *ngFor="let instruction of recipe.instructions; let i=index; trackBy: trackByFn">
-        <input-icon [icon]="'delete'" (onclick)="remove(recipe, i, 'instructions')">
-          <input-text
-            [control]="ngform.controls['instruction_' + i] | abstractToFormControl"
-            [value]="instruction"
-            [placeholder]="'Instruction ' + (i + 1)"
-            [required]="true"
-            [id]="'instruction_' + i"
-            [name]="'instruction_' + i"
-            [(ngModel)]="recipe.instructions[i]"
-            ngDefaultControl>
-          </input-text>
-        </input-icon>
-      </div>
+      <inputs-container *ngFor="let instruction of recipe.instructions; let i=index; trackBy: trackByFn" [gap]="20">
+        <input-field>
+          <input-icon input
+            [icon]="'delete'" 
+            (iconClick)="remove(recipe, i, 'instructions')"
+          >
+            <input-text input
+              [control]="ngform.controls['instruction_' + i] | abstractToFormControl"
+              [value]="instruction"
+              [validation]="'Required field'"
+              [placeholder]="'Instruction ' + (i + 1)"
+              [required]="true"
+              [id]="'instruction_' + i"
+              [name]="'instruction_' + i"
+              [(ngModel)]="recipe.instructions[i]"
+              ngDefaultControl>
+            </input-text>
+          </input-icon>
+        </input-field>
+      </inputs-container>
       
       <mat-error *ngIf="ngform.errors?.['atLeastOneInstruction'] && ngform.submitted">
         At least one item is required!
       </mat-error>
-      
+
       <button #submiter type="submit" hidden></button>
     </form>
 
-    <footer>
-      <primary-button
-        [placeholder]="'Save'"
-        [palette]="'primary'"
-        (onclick)="submiter.click()">
-      </primary-button>
-
-      <primary-button
-        [placeholder]="'Delete Recipe'"
-        [palette]="'warn'">
-      </primary-button>
-    </footer>
+    <inputs-container [gap]="25" between>
+      <input-field [width]="25">
+        <primary-button input
+          [placeholder]="'Save'"
+          [palette]="'primary'"
+          (onclick)="submiter.click()">
+        </primary-button>
+      </input-field>
+      
+      <input-field [width]="25">
+        <primary-button input
+          [placeholder]="'Delete Recipe'"
+          [palette]="'warn'">
+        </primary-button>
+      </input-field>
+    </inputs-container>
   } 
 
   @if (error$ | async) { 

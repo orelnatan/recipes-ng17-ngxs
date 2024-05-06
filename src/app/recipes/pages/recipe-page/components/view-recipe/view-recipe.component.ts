@@ -15,7 +15,6 @@ import { FormUtilsModule } from '@recipes/shared/form-utils';
 import { IRecipe } from '@recipes/recipes/models';
 
 import { RecipeHeaderModule } from '../recipe-header';
-import { ContextFrameModule } from '../context-frame';
 
 @UntilDestroy()
 @Component({
@@ -29,7 +28,6 @@ import { ContextFrameModule } from '../context-frame';
     MatChipsModule,
     RecipeHeaderModule,
     FormUtilsModule,
-    ContextFrameModule,
   ],
   templateUrl: './view-recipe.component.html',
   styleUrl: './view-recipe.component.scss'

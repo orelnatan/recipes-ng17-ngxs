@@ -6,4 +6,16 @@
     display: flex;
     margin: 0px -5px;
   }
+
+  .space-between {
+    justify-content: space-between;
+  }
+
+  .space-evenly {
+    justify-content: space-evenly;
+  }
+
+  .space-around {
+    justify-content: space-around;
+  }
 }

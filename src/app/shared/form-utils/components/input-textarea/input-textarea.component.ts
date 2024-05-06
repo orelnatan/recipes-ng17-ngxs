@@ -5,7 +5,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { BaseErrorStateMatcher } from '../../classes';
 
 @Component({
-  selector: 'input-textarea',
+  selector: '[input] input-textarea',
   templateUrl: './input-textarea.component.html',
 })
 export class InputTextareaComponent implements OnChanges {

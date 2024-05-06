@@ -4,24 +4,34 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 15px;
+  padding: 10px 15px;
   border-radius: 25px;
   background: $color-mouse;
 
   .mat-icon-container {
-    margin: 0px 10px;
-    padding-top: 10px;
+    padding-top: 7px;
   }
 
-  .inputs-container {
+  .input-container {
+    position: relative;
     width: 100%;
-  }
-
-  input-field {
-    height: 57px;
+    padding: 0px 5px;
   }
 
   mat-icon {
     cursor: pointer;
+  }
+
+  ::ng-deep.mat-mdc-form-field-subscript-wrapper {
+    position: absolute;
+    bottom: -31px;
+  }
+
+  ::ng-deep.mat-mdc-form-field-infix {
+    padding: 5px 0px !important; 
+  }
+
+  ::ng-deep.mat-mdc-form-field-infix {
+    min-height: 0%;
   }
 }

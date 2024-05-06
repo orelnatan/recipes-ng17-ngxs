@@ -1,6 +1,10 @@
 
 <div class="inputs-container-main" [style.padding-top.px]="gap">
-  <div class="inputs-placeholder">
+  <div class="inputs-placeholder" [ngClass]="{
+    'space-between': between,
+    'space-around': around,
+    'space-evenly': evenly
+  }">
     <ng-content select="input-field"></ng-content>
   </div>
 </div>
