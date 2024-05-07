@@ -6,6 +6,7 @@
     "paths": {
       "@recipes/core/*": ["src/app/core/*"],
       "@recipes/shared/*": ["src/app/shared/*"],
+      "@recipes/auth/*": ["src/app/auth/*"],
       "@recipes/recipes/*": ["src/app/recipes/*"],
       "@recipes/env/*": ["src/environments/*"],
       "@recipes/assets/*": ["src/assets/*"],

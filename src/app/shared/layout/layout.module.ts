@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { 
   RootLayoutComponent,
   PageLayoutComponent, 
+  LayoutHeaderComponent,
   ContentHeaderComponent,
   LayoutSidebarComponent,
 } from './components';
@@ -13,6 +14,7 @@ import {
   declarations: [
     RootLayoutComponent,
     PageLayoutComponent, 
+    LayoutHeaderComponent,
     ContentHeaderComponent,
     LayoutSidebarComponent,
   ],
@@ -22,7 +24,8 @@ import {
   ],
   exports: [
     RootLayoutComponent,
-    PageLayoutComponent, 
+    PageLayoutComponent,
+    LayoutHeaderComponent, 
     ContentHeaderComponent,
     LayoutSidebarComponent,
   ]

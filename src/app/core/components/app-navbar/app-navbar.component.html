@@ -1,0 +1,25 @@
+
+<div class="app-navbar-main deep-shadow">
+  <section>
+    <primary-button input
+      [icon]="'power_settings_new'"
+      [placeholder]="'Log Out'">
+    </primary-button>
+
+    <spacer [space]="10"></spacer>
+
+    <primary-button input
+      [icon]="'dinner_dining'"
+      [placeholder]="'Recipes'"
+      [routerLink]="['recipes']">
+    </primary-button>   
+  </section>
+
+  <section>
+    <primary-button input
+      [icon]="'account_circle'"
+      [placeholder]="'Registration'"
+      [routerLink]="['auth']">
+    </primary-button>
+  </section>
+</div>

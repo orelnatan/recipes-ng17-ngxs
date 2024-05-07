@@ -4,27 +4,18 @@ import { RouterModule } from '@angular/router';
 
 import { LayoutModule } from '@recipes/shared/layout';
 
-import { 
-  AppNavbarModule
-} from './components';
-
 @Component({
-  selector: 'core-root',
+  selector: 'auth-root',
   standalone: true,
   imports: [
     CommonModule,
     LayoutModule,
     RouterModule,
-    AppNavbarModule,
   ],
   template: `
     <root-layout>
-      <layout-header header-primary>
-        <app-navbar></app-navbar>
-      </layout-header>
-
       <router-outlet />
     </root-layout>
   `,
 })
-export class CoreRootComponent {}
+export class AuthRootComponent {}

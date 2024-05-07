@@ -1,0 +1,14 @@
+@import './src/assets/config/utils.scss';
+
+.app-navbar-main {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+  background-color: $color-base;
+
+  section {
+    display: inline-flex;
+  }
+}
