@@ -33,7 +33,7 @@
 
         <input-field [width]="25">
           <input-single-select input
-            [items]="styles"
+            [items]="styleEnum | enumToList"
             [control]="style.control"
             [value]="recipe.style"
             [placeholder]="'Style'"
@@ -120,7 +120,7 @@
         <edit-header [title]="'Ingredients'" (add)="add(recipe, 'ingredients')"></edit-header>
       </div>
      
-      <inputs-container *ngFor="let ingredient of recipe.ingredients; let i=index; trackBy: trackByFn" [gap]="20">
+      <inputs-container [gap]="20" *ngFor="let ingredient of recipe.ingredients; let i=index; trackBy: trackByFn">
         <input-field>
           <input-icon input
              [icon]="'delete'"
@@ -149,7 +149,7 @@
         <edit-header [title]="'Instructions'" (add)="add(recipe, 'instructions')"></edit-header>
       </div>
 
-      <inputs-container *ngFor="let instruction of recipe.instructions; let i=index; trackBy: trackByFn" [gap]="20">
+      <inputs-container [gap]="20" *ngFor="let instruction of recipe.instructions; let i=index; trackBy: trackByFn">
         <input-field>
           <input-icon input
             [icon]="'delete'" 
@@ -180,7 +180,7 @@
     <inputs-container [gap]="25" between>
       <input-field [width]="25">
         <primary-button input
-          [placeholder]="'Save'"
+          [text]="'Save'"
           [palette]="'primary'"
           (onclick)="submiter.click()">
         </primary-button>
@@ -188,7 +188,7 @@
       
       <input-field [width]="25">
         <primary-button input
-          [placeholder]="'Delete Recipe'"
+          [text]="'Delete Recipe'"
           [palette]="'warn'">
         </primary-button>
       </input-field>

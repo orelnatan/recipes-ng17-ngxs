@@ -19,7 +19,7 @@ import {
   ],
   template: `
     <root-layout>
-      <layout-header header-primary>
+      <layout-header>
         <app-navbar></app-navbar>
       </layout-header>
 

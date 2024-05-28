@@ -28,10 +28,10 @@ import { RecipesState } from './state';
         </ng-container>
 
         <ng-container external-content>
-          <root-layout fitContent>
-            <content-header>
+          <root-layout>
+            <layout-header>
               <recipes-navbar></recipes-navbar>
-            </content-header>
+            </layout-header>
 
             <router-outlet />
           </root-layout>

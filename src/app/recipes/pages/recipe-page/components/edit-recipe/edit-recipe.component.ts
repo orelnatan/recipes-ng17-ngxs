@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 import { RecipesState } from '@recipes/recipes/state';
 import { Create, Update } from '@recipes/recipes/state/recipes.actions';
 import { IRecipe, Prop, Style } from '@recipes/recipes/models';
-import { FormUtilsModule, IListItem } from '@recipes/shared/form-utils';
+import { FormUtilsModule } from '@recipes/shared/form-utils';
 import { EditHeaderModule } from '@recipes/shared/components';
 import { UtilsModule } from '@recipes/shared/utils';
 
@@ -41,24 +41,7 @@ export class EditRecipeComponent {
   
   recipe$: Observable<IRecipe> = this.store.select(RecipesState.recipeById(this.recipeId));
 
-  styles: IListItem[] = [
-    {
-      value: Style.Baking,
-      placeholder: Style.Baking,
-    },
-    {
-      value: Style.Frying,
-      placeholder: Style.Frying,
-    },
-    {
-      value: Style.Roasting,
-      placeholder: Style.Roasting,
-    },
-    {
-      value: Style.Sautee,
-      placeholder: Style.Sautee,
-    },
-  ]
+  styleEnum: typeof Style = Style;
 
   constructor(
     private store: Store,

@@ -1,1 +1,11 @@
-<p>input-checkbox works!</p>
+
+<div class="input-checkbox-main">
+  <mat-checkbox 
+    [checked]="value"
+    [color]="'primary'"
+    [disabled]="readonly"
+    (change)="onchange.emit($event.checked)"
+  >
+    <span>{{ text }}</span> 
+  </mat-checkbox>
+</div>

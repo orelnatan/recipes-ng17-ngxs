@@ -7,9 +7,16 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
+import { 
+  CollectionValidator,
+  RequireMatchValidator
+} from './validators';
 
 import { 
   InputTextComponent,
+  InputPasswordComponent,
   InputTextareaComponent,
   InputsContainerComponent,
   InputFieldComponent,
@@ -17,11 +24,13 @@ import {
   InputNumberComponent,
   InputSingleSelectComponent,
   InputIconComponent,
+  InputCheckboxComponent,
 } from './components';
 
 @NgModule({
   declarations: [
     InputTextComponent,
+    InputPasswordComponent,
     InputNumberComponent,
     InputTextareaComponent,
     InputSingleSelectComponent,
@@ -29,6 +38,9 @@ import {
     InputFieldComponent,
     InputIconComponent,
     PrimaryButtonComponent,
+    InputCheckboxComponent,
+    RequireMatchValidator,
+    CollectionValidator,
   ],
   imports: [ 
     CommonModule,
@@ -39,10 +51,12 @@ import {
     MatSelectModule,
     MatInputModule,
     MatIconModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCheckboxModule
   ],
   exports: [
     InputTextComponent,
+    InputPasswordComponent,
     InputNumberComponent,
     InputTextareaComponent,
     InputSingleSelectComponent,
@@ -50,6 +64,9 @@ import {
     InputFieldComponent,
     InputIconComponent,
     PrimaryButtonComponent,
+    InputCheckboxComponent,
+    RequireMatchValidator,
+    CollectionValidator,
   ]
 })
 export class FormUtilsModule {}

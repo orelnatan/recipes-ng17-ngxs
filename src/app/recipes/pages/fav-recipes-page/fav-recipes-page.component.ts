@@ -22,7 +22,6 @@ import { IRecipe } from '@recipes/recipes/models';
     ElementsGridModule
   ],
   templateUrl: './fav-recipes-page.component.html',
-  styleUrl: './fav-recipes-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FavRecipesPageComponent {

@@ -12,4 +12,5 @@ export class InputsContainerComponent {
   @Input({ transform: booleanAttribute }) between: boolean;
   @Input({ transform: booleanAttribute }) around: boolean;
   @Input({ transform: booleanAttribute }) evenly: boolean;
+  @Input({ transform: booleanAttribute }) end: boolean;
 }

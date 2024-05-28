@@ -10,7 +10,7 @@ import { ThemePalette } from '@angular/material/core';
 export class PrimaryButtonComponent {
   @Input() dosubmit: boolean;
   @Input() readonly: boolean;
-  @Input() placeholder: string;
+  @Input() text: string;
   @Input() icon: string;
   @Input() palette: ThemePalette;
  
