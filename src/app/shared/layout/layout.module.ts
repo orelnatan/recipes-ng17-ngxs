@@ -6,7 +6,6 @@ import {
   RootLayoutComponent,
   PageLayoutComponent, 
   LayoutHeaderComponent,
-  ContentHeaderComponent,
   LayoutSidebarComponent,
 } from './components';
 
@@ -15,7 +14,6 @@ import {
     RootLayoutComponent,
     PageLayoutComponent, 
     LayoutHeaderComponent,
-    ContentHeaderComponent,
     LayoutSidebarComponent,
   ],
   imports: [ 
@@ -26,7 +24,6 @@ import {
     RootLayoutComponent,
     PageLayoutComponent,
     LayoutHeaderComponent, 
-    ContentHeaderComponent,
     LayoutSidebarComponent,
   ]
 })

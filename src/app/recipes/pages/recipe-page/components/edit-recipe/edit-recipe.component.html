@@ -15,7 +15,7 @@
         <h1>New Recipe</h1>
       }
 
-      <inputs-container [gap]="45">
+      <inputs-container [margin]="45">
         <input-field>
           <input-text input
             [control]="name.control"
@@ -33,7 +33,7 @@
 
         <input-field [width]="25">
           <input-single-select input
-            [items]="styles"
+            [items]="styleEnum | enumToList"
             [control]="style.control"
             [value]="recipe.style"
             [placeholder]="'Style'"
@@ -49,7 +49,7 @@
         </input-field>
       </inputs-container>
 
-      <inputs-container [gap]="10">
+      <inputs-container [margin]="10">
         <input-field>
           <input-text input
             [control]="author.control"
@@ -82,7 +82,7 @@
         </input-field>
       </inputs-container>
 
-      <inputs-container [gap]="10">
+      <inputs-container [margin]="10">
         <input-field>
           <input-text input
             [control]="image.control"
@@ -98,7 +98,7 @@
         </input-field>
       </inputs-container>
 
-      <inputs-container [gap]="10">
+      <inputs-container [margin]="10">
         <input-field>
           <input-textarea input
             [control]="notes.control"
@@ -120,24 +120,19 @@
         <edit-header [title]="'Ingredients'" (add)="add(recipe, 'ingredients')"></edit-header>
       </div>
      
-      <inputs-container *ngFor="let ingredient of recipe.ingredients; let i=index; trackBy: trackByFn" [gap]="20">
+      <inputs-container *ngFor="let ingredient of recipe.ingredients; let i=index; trackBy: trackByFn" [margin]="20">
         <input-field>
-          <input-icon input
-             [icon]="'delete'"
-             (iconClick)="remove(recipe, i, 'ingredients')"
-          >
-            <input-text input
-              [control]="ngform.controls['ingredient_' + i] | abstractToFormControl"
-              [value]="ingredient"
-              [validation]="'Required field'"
-              [placeholder]="'Ingredient ' + (i + 1)"
-              [required]="true"
-              [id]="'ingredient_' + i"
-              [name]="'ingredient_' + i"
-              [(ngModel)]="recipe.ingredients[i]"
-              ngDefaultControl>
-            </input-text>
-          </input-icon>
+          <input-text input
+            [control]="ngform.controls['ingredient-' + i] | abstractToFormControl"
+            [value]="ingredient"
+            [validation]="'Required field'"
+            [placeholder]="'Ingredient ' + (i + 1)"
+            [required]="true"
+            [id]="'ingredient-' + i"
+            [name]="'ingredient-' + i"
+            [(ngModel)]="recipe.ingredients[i]"
+            ngDefaultControl>
+          </input-text>
         </input-field>
       </inputs-container>
 
@@ -149,24 +144,19 @@
         <edit-header [title]="'Instructions'" (add)="add(recipe, 'instructions')"></edit-header>
       </div>
 
-      <inputs-container *ngFor="let instruction of recipe.instructions; let i=index; trackBy: trackByFn" [gap]="20">
+      <inputs-container *ngFor="let instruction of recipe.instructions; let i=index; trackBy: trackByFn" [margin]="20">
         <input-field>
-          <input-icon input
-            [icon]="'delete'" 
-            (iconClick)="remove(recipe, i, 'instructions')"
-          >
-            <input-text input
-              [control]="ngform.controls['instruction_' + i] | abstractToFormControl"
-              [value]="instruction"
-              [validation]="'Required field'"
-              [placeholder]="'Instruction ' + (i + 1)"
-              [required]="true"
-              [id]="'instruction_' + i"
-              [name]="'instruction_' + i"
-              [(ngModel)]="recipe.instructions[i]"
-              ngDefaultControl>
-            </input-text>
-          </input-icon>
+          <input-text input
+            [control]="ngform.controls['instruction-' + i] | abstractToFormControl"
+            [value]="instruction"
+            [validation]="'Required field'"
+            [placeholder]="'Instruction ' + (i + 1)"
+            [required]="true"
+            [id]="'instruction-' + i"
+            [name]="'instruction-' + i"
+            [(ngModel)]="recipe.instructions[i]"
+            ngDefaultControl>
+          </input-text>
         </input-field>
       </inputs-container>
       
@@ -177,19 +167,19 @@
       <button #submiter type="submit" hidden></button>
     </form>
 
-    <inputs-container [gap]="25" between>
+    <inputs-container [margin]="25" between>
       <input-field [width]="25">
         <primary-button input
-          [placeholder]="'Save'"
-          [palette]="'primary'"
-          (onclick)="submiter.click()">
+          [text]="'Delete Recipe'"
+          [palette]="'warn'">
         </primary-button>
       </input-field>
-      
+
       <input-field [width]="25">
         <primary-button input
-          [placeholder]="'Delete Recipe'"
-          [palette]="'warn'">
+          [text]="'Save'"
+          [palette]="'primary'"
+          (onclick)="submiter.click()">
         </primary-button>
       </input-field>
     </inputs-container>

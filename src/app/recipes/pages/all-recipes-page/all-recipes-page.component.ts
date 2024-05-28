@@ -22,7 +22,6 @@ import { IRecipe } from '@recipes/recipes/models';
     ElementsGridModule,
   ],
   templateUrl: './all-recipes-page.component.html',
-  styleUrl: './all-recipes-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AllRecipesPageComponent {

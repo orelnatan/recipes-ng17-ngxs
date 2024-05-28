@@ -7,7 +7,7 @@
       <mat-icon class="favorite-icon">{{ 'stars' }}</mat-icon>
     }
     
-    <img [ngSrc]="recipe.image" fill priority>
+    <img [ngSrc]="recipe.image || 'non-empty'" fill priority>
     <mat-card-content>
       <h3>{{ recipe.name }}</h3>
     </mat-card-content>

@@ -9,5 +9,5 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular
 export class InputFieldComponent {
   @Input() @HostBinding('style.max-width.%') public width: number | null;
   
-  @Input() gap: number;
+  @Input() margin: number;
 }

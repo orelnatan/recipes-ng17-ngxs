@@ -1,6 +1,14 @@
+@import './src/assets/config/utils.scss';
 
 .registration-page-main {
-  width: 100%;
-
+  display: grid;
+  align-items: center;
+  height: 100%;
   
+  .form-container {
+    border-top: 5px solid $color-base;
+    width: 955px;
+    margin: 0 auto;
+    padding: 25px;
+  }
 }

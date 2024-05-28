@@ -1,6 +1,154 @@
 
 <page-layout>
   <div class="registration-page-main">
+    <div class="form-container shallow-shadow">
+      <form #ngform="ngForm"
+        novalidate
+        requireMatch
+        [origin]="'password'"
+        [clone]="'repassword'"
+        (ngSubmit)="ngform.valid && submit(registration)"
+      >
+        <inputs-container [gap]="35">
+          <input-field>
+            <input-text input
+              [control]="username.control"
+              [placeholder]="'Username'"
+              [validation]="'Required field'"
+              [required]="true"
+              [(ngModel)]="registration.username"
+              #username="ngModel"
+              id="username"
+              name="username"
+              pattern="[a-zA-Z ]*"
+              ngDefaultControl>
+            </input-text>
+          </input-field>
+
+          <input-field>
+            <input-text input
+              [control]="email.control"
+              [placeholder]="'Email'"
+              [validation]="'Required field'"
+              [required]="true"
+              [(ngModel)]="registration.email"
+              #email="ngModel"
+              id="email"
+              name="email"
+              email
+              ngDefaultControl>
+            </input-text>
+          </input-field>
+
+          <input-field>
+            <input-single-select input
+              [items]="countryEnum | enumToList"
+              [control]="country.control"
+              [placeholder]="'Country'"
+              [validation]="'Required field'"
+              [required]="true"
+              [ngModel]="registration.country"
+              (onchange)="registration.country=$event"
+              #country="ngModel"
+              id="country"
+              name="country"
+              ngDefaultControl>
+            </input-single-select>
+          </input-field>
+        </inputs-container>
+
+        <inputs-container [margin]="15">
+          <input-field>
+            <input-text input
+              [placeholder]="'Active From'">
+            </input-text>
+          </input-field>
+
+          <input-field>
+            <input-text input
+              [placeholder]="'Expired At'">
+            </input-text>
+          </input-field>
+        </inputs-container>
+
+        <inputs-container [margin]="15">
+          <input-field>
+            <input-textarea input
+              [control]="notes.control"
+              [placeholder]="'Your notes here...'"
+              [validation]="'Required field'"
+              [required]="true"
+              [rows]="5"
+              [(ngModel)]="registration.notes"
+              #notes="ngModel"
+              id="notes"
+              name="notes"
+              minlength="20"
+              ngDefaultControl>
+            </input-textarea>
+          </input-field>
+        </inputs-container>
+
+        <inputs-container [margin]="15">
+          <input-field>
+            <input-password input
+              [control]="password.control"
+              [placeholder]="'Password'"
+              [validation]="'Required field'"
+              [required]="true"
+              [(ngModel)]="registration.password"
+              #password="ngModel"
+              id="password"
+              name="password"
+              minlength="8"
+              maxlength="12"
+              ngDefaultControl>
+            </input-password>
+          </input-field>
     
+          <input-field>
+            <input-password input
+              [control]="repassword.control"
+              [placeholder]="'Repeat Password'"
+              [validation]="'Required field'"
+              [required]="true"
+              [(ngModel)]="registration.repassword"
+              #repassword="ngModel"
+              id="repassword"
+              name="repassword"
+              ngDefaultControl>
+            </input-password>
+          </input-field>
+        </inputs-container>
+
+        <inputs-container [margin]="10">
+          <input-field>
+            <input-checkbox input
+              [text]="'Accept terms and conditions'">
+            </input-checkbox>
+          </input-field>
+        </inputs-container>
+
+        <inputs-container [margin]="25" end>
+          <input-field [width]="20">
+            <primary-button input
+              [icon]="'delete'"
+              [text]="'Clear'"
+              [palette]="'warn'"
+              (onclick)="reset()">
+            </primary-button>
+          </input-field>
+
+          <input-field [width]="20">
+            <primary-button input
+              [dosubmit]="true"
+              [icon]="'how_to_reg'"
+              [text]="'Register'"
+              [palette]="'primary'">
+            </primary-button>
+          </input-field>
+        </inputs-container>
+      </form>
+    </div>
   </div>
 </page-layout>

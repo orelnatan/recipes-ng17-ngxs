@@ -3,7 +3,7 @@
   @if (recipe$ | async; as recipe) {
     <img [ngSrc]="recipe?.image! || 'non-empty'" fill priority>
 
-    <div class="recipe-spec">
+    <div class="recipe-spec-container">
       <div class="recipe-header">
         <recipe-header
           [name]="recipe.name"
@@ -16,16 +16,8 @@
           (like)="like(recipe)">
         </recipe-header>
       </div>
-      
-      <inputs-container [gap]="45">
-        <input-field>
-          <b>Notes:</b>
-          <p>{{ recipe.notes }}</p>
-        </input-field>
-      </inputs-container>
-
-     
-
+    
+    
      
     </div>
   } 

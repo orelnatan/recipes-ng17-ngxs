@@ -4,7 +4,7 @@
 
   .inputs-placeholder {
     display: flex;
-    margin: 0px -5px;
+    gap: 10px;
   }
 
   .space-between {
@@ -17,5 +17,9 @@
 
   .space-around {
     justify-content: space-around;
+  }
+
+  .content-end {
+    justify-content: end;
   }
 }

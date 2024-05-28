@@ -3,16 +3,8 @@
 .view-recipe-main {
   width: 100%;
 
-  .recipe-spec {
+  .recipe-spec-container{
     padding: 32px;
-  }
-
-  .ingredients-container {
-    margin-top: -3px;
-  }
-
-  .instructions-container {
-    margin-top: -15px;
   }
 
   img {
@@ -20,10 +12,4 @@
     object-fit: cover;
   }
 
-  p {
-    margin-top: 10px;
-    padding: 10px;
-    background: $color-mouse;
-    border-radius: 13px;
-  }
 }

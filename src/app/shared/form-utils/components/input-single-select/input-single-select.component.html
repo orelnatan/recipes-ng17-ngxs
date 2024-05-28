@@ -8,7 +8,13 @@
       (selectionChange)="onchange.emit($event.value)"
     >
       @for (item of items; track item.id) {
-        <mat-option [value]="item.value">{{ item.value }}</mat-option>
+        <mat-option 
+          [id]="item.id"
+          [value]="item.value"
+          [disabled]="item.readonly"
+        >
+          <span>{{ item.name }}</span> 
+        </mat-option>
       }
     </mat-select>
 

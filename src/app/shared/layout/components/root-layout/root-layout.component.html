@@ -3,17 +3,13 @@
   <div class="layout-top">
     <div class="layout-header-container">
       <header>
-        <ng-content select="layout-header" select="[header-primary]"></ng-content>
+        <ng-content select="layout-header"></ng-content>
       </header>
     </div>
   </div>
 
   <div class="layout-body">
     <div class="inner-content-container">
-      <header>
-        <ng-content select="content-header"></ng-content>
-      </header>
-
       <section [style.height.%]="fitContent ? 0 : null">
         <ng-content></ng-content>
       </section>

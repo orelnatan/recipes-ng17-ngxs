@@ -1,8 +1,9 @@
 
 export interface IListItem {
-  id?: number;
+  id: string;
   value: string;
-  placeholder?: string;
+  name: string;
   readonly?: boolean;
   checked?: boolean;
+  color?: string
 }

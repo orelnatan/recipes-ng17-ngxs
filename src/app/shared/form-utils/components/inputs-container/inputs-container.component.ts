@@ -8,8 +8,10 @@ import { ChangeDetectionStrategy, Component, Input, booleanAttribute } from '@an
 })
 export class InputsContainerComponent {
   @Input() gap: number;
+  @Input() margin: number;
 
   @Input({ transform: booleanAttribute }) between: boolean;
   @Input({ transform: booleanAttribute }) around: boolean;
   @Input({ transform: booleanAttribute }) evenly: boolean;
+  @Input({ transform: booleanAttribute }) end: boolean;
 }

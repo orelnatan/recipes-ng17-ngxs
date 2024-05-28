@@ -2,8 +2,8 @@
 <div class="input-text-main">
   <mat-form-field>
     <input matInput 
-      type="text"
-      placeholder="{{placeholder}}"
+      [type]="'text'"
+      [placeholder]="placeholder"
       [errorStateMatcher]="matcher"
       [formControl]="control"
       [readonly]="readonly"
