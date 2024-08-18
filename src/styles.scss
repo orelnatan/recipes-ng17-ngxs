@@ -6,3 +6,15 @@
   box-sizing: border-box;
   font-family: heebo-regular;
 }
+
+body.light {
+  @include lighten();
+}
+
+body.dark {
+  @include darken();
+}
+
+body {
+  background: var(--bgColor);
+}

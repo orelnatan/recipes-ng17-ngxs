@@ -8,3 +8,14 @@ $color-warning: #FFC007;
 $color-silver: #808080;
 $color-mouse: #F5F5F5;
 $color-dark-gray: #1E1E1E;
+
+$color-background-light: #FFFFFF;
+$color-background-dark: #000000;
+
+@mixin lighten() {
+  --bgColor: #{$color-background-light};
+}
+
+@mixin darken() {
+  --bgColor: #{$color-background-dark};
+}
